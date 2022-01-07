@@ -1,0 +1,11 @@
+/*---------- fonts start ----------*/
+@font-face {
+  font-family: "Merriweather";
+  src: url("assets/fonts/Merriweather/Merriweather-Bold.ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("assets/fonts/Inter/Inter-VariableFont.ttf");
+}
+/*---------- fonts end ----------*/
