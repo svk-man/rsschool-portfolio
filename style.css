@@ -9,3 +9,27 @@
   src: url("assets/fonts/Inter/Inter-VariableFont.ttf");
 }
 /*---------- fonts end ----------*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header,
+.main,
+.footer {
+  border: 1px solid blueviolet;
+  min-height: 100px;
+}
+
+.section {
+  border: 1px solid green;
+  min-height: 100px;
+}
