@@ -365,15 +365,18 @@ body {
 }
 /*---------- price section end ----------*/
 
+/*---------- contacts section start ----------*/
 .contacts-section {
   min-height: 700px;
   background-image: url('./assets/img/contacts-bg.jpg');
   background-repeat: no-repeat;
+  background-position: center 100px;
 }
 
 .contacts-section__container {
   width: 450px;
   height: 445px;
+  padding-top: 60px;
   display: flex;
   flex-direction: column;
   margin-left: auto;
@@ -419,3 +422,58 @@ input:-webkit-autofill:active {
   -webkit-text-fill-color: var(--main-text-color);
   transition: background-color 0s ease-in-out 9000s;
 }
+/*---------- contacts section end ----------*/
+
+/*---------- footer section start ----------*/
+.footer__container {
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  width: 169px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 25px;
+}
+
+.footer__link {
+  font-family: inherit;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: .5s;
+}
+
+.footer__link:hover {
+  color: var(--main-text-color);
+}
+
+.socials {
+  width: 188px;
+  height: 32px;
+}
+
+.socials__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.socials__item {
+  list-style: none;
+}
+
+.socials__link-icon {
+  width: 32px;
+  height: 32px;
+  fill: #FFFFFF;
+  transition: .5s;
+}
+
+.socials__link-icon:hover {
+  fill: var(--main-text-color);
+}
+/*---------- footer section end ----------*/
