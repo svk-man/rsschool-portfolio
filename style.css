@@ -178,14 +178,20 @@ body {
   color: var(--color-white);
 }
 
-.lang-switcher__link {
+.lang-switcher__btn {
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
   color: var(--color-white);
-  text-decoration: none;
+  background-color: transparent;
+  border: none;
   transition: .5s;
 }
 
-.lang-switcher__link:hover {
+.lang-switcher__btn:hover {
   color: var(--color-gold);
+  cursor: pointer;
 }
 /*---------- header end ----------*/
 
