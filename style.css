@@ -100,7 +100,8 @@ body {
 
 .skills-section__container,
 .portfolio-section__container,
-.video-section__container {
+.video-section__container,
+.price-section__container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -293,6 +294,8 @@ body {
   height: 560px;
 }
 /*---------- portfolio section end ----------*/
+
+/*---------- video section start ----------*/
 .video-player {
   display: flex;
   justify-content: center;
@@ -316,3 +319,48 @@ body {
   filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
   cursor: pointer;
 }
+/*---------- video section end ----------*/
+
+/*---------- price section start ----------*/
+.price-section__items {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.price-section__item {
+  width: 450px;
+  height: 505px;
+  padding: 43px 0;
+  border: 3px solid var(--main-text-color);
+  text-align: center;
+}
+
+.price-section__item-title {
+  margin-bottom: 20px;
+  font-family: "Merriweather";
+  font-size: 28px;
+  line-height: 56px;
+}
+
+.price-section__item-price {
+  margin-bottom: 20px;
+  font-family: "Merriweather";
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 48px;
+  color: var(--main-text-color);
+}
+
+.price-section__item-text {
+  margin-bottom: 40px;
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 36px;
+}
+
+.price-section__item-text-line {
+  display: block;
+}
+/*---------- price section end ----------*/
