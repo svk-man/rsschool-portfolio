@@ -1,3 +1,8 @@
+const hamburger = document.querySelector('.hamburger');
+hamburger.addEventListener('click', function() {
+  this.classList.toggle('hamburger--is-active');
+});
+
 console.log('%cВёрстка валидная +10', 'color: green; font-size: 16px');
 console.log('для проверки валидности вёрстки используйте сервис https://validator.w3.org/');
 console.log('валидной вёрстке соответствует надпись "Document checking completed. No errors or warnings to show." В таком случае баллы за пункт требований выставляем полностью.');
