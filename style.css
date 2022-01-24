@@ -103,7 +103,7 @@ body {
 @media (max-width: 768px) {
   .section-title {
     width: 56%;
-    margin-bottom: 67px;
+    margin-bottom: 68px;
     font-size: 32px;
     line-height: 40px;
     background-image: linear-gradient(to top, var(--color-black) 19px, var(--color-gold) 19px, var(--color-gold) 21px, var(--color-black) 21px);
@@ -141,6 +141,17 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media (max-width: 768px) {
+  .video-section__container {
+    width: 100%;
+    padding: 0;
+  }
+
+  .video-section__container .section-title {
+    width: 47.5%;
+  }
 }
 /*---------- default and common end ----------*/
 
@@ -572,12 +583,33 @@ body {
   background-size: cover;
 }
 
+@media (max-width: 768px) {
+  .video-player {
+    height: 418px;
+    background-position: -6px 1px;
+  }
+}
+
+@media (max-width: 520px) {
+  .video-player {
+    background-position: 20%;
+  }
+}
+
 .video-player__play-button {
   width: 130px;
   height: 130px;
   background-image: url("./assets/svg/play.svg");
   background-repeat: no-repeat;
+  background-size: cover;
   transition: .5s;
+}
+
+@media (max-width: 768px) {
+  .video-player__play-button {
+    width: 65px;
+    height: 65px;
+  }
 }
 
 .video-player__play-button:hover {
