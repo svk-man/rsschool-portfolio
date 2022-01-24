@@ -685,7 +685,17 @@ body {
   min-height: 800px;
   background-image: url('./assets/img/contacts-bg.jpg');
   background-repeat: no-repeat;
+  background-size: auto 700px;
   background-position: center 100px;
+}
+
+@media (max-width: 768px) {
+  .contacts-section {
+    min-height: 680px;
+    padding-top: 80px;
+    background-size: auto 600px;
+    background-position: center 80px;
+  }
 }
 
 .contacts-section__container {
@@ -697,11 +707,31 @@ body {
   margin-left: auto;
 }
 
+@media (max-width: 768px) {
+  .contacts-section__container {
+    padding-top: 70px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .contacts-section__container {
+    width: 100%;
+  }
+}
+
 .contacts-section__title {
   width: 100%;
   margin-bottom: 40px;
   text-align: left;
   background-image: none;
+}
+
+@media (max-width: 768px) {
+  .contacts-section__title {
+    margin-bottom: 53px;
+    text-align: center;
+  }
 }
 
 .contacts-section__title .section-title__inner {
@@ -737,6 +767,13 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-text-fill-color: var(--color-gold);
   transition: background-color 0s ease-in-out 9000s;
+}
+
+@media (max-width: 768px) {
+  .contacts-section__btn {
+    display: block;
+    margin: 0 auto;
+  }
 }
 /*---------- contacts section end ----------*/
 
