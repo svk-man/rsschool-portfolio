@@ -49,6 +49,12 @@ body {
   }
 }
 
+@media (max-width: 520px) {
+  .container {
+    width: calc(100% - 20px);
+  }
+}
+
 .btn {
   width: 220px;
   height: 55px;
@@ -79,6 +85,12 @@ body {
 
 .section {
   padding-top: 100px;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-top: 80px;
+  }
 }
 
 .section-title {
@@ -121,6 +133,18 @@ body {
   .header__container {
     background-position: -5px -30px;
     background-size: auto 620px;
+  }
+}
+
+@media (max-width: 680px) {
+  .header__container {
+    background-position: -120px -30px;
+  }
+}
+
+@media (max-width: 520px) {
+  .header__container {
+    background-position: -310px -30px;
   }
 }
 
@@ -315,10 +339,31 @@ body {
 
 /*---------- hero section start ----------*/
 .hero-section {
-  min-height: 820px;
+  height: 820px;
+  padding-top: 78px;
   background-image: url('./assets/img/header-bg.jpg');
   background-position: center -90px;
   background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 590px;
+    background-position: -5px -120px;
+    background-size: auto 620px;
+  }
+}
+
+@media (max-width: 680px) {
+  .hero-section {
+    background-position: -120px -120px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-section {
+    background-position: -310px -120px;
+  }
 }
 
 .hero-section__container {
@@ -327,16 +372,59 @@ body {
   padding-left: 60px;
 }
 
+@media (max-width: 768px) {
+  .hero-section__container {
+    width: 390px;
+    padding: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-section__container {
+    width: 100%;
+  }
+}
+
 .hero-section__title {
+  margin-bottom: 10px;
   font-family: var(--font-family-title);
   font-weight: bold;
   font-size: 60px;
   line-height: 120px;
-  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .hero-section__title {
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 64px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-section__title {
+    font-size: 28px;
+    line-height: 56px;
+  }
 }
 
 .hero-section__text {
   margin-bottom: 25px;
+}
+
+@media (max-width: 768px) {
+  .hero-section__text {
+    margin-bottom: 60px;
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-section__text {
+    margin-bottom: 60px;
+    font-size: 18px;
+  }
 }
 /*---------- hero section end ----------*/
 
