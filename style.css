@@ -103,7 +103,7 @@ body {
 @media (max-width: 768px) {
   .section-title {
     width: 56%;
-    margin-bottom: 65px;
+    margin-bottom: 67px;
     font-size: 32px;
     line-height: 40px;
     background-image: linear-gradient(to top, var(--color-black) 19px, var(--color-gold) 19px, var(--color-gold) 21px, var(--color-black) 21px);
@@ -534,7 +534,7 @@ body {
 /*---------- portfolio section start ----------*/
 .portfolio-section__buttons {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 5px;
   margin-bottom: 60px;
@@ -542,14 +542,21 @@ body {
 
 .portfolio-section__photos {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   gap: 25px;
 }
 
 .portfolio-section__photo {
   width: 450px;
-  height: 560px;
+  min-height: 560px;
+}
+
+@media (max-width: 470px) {
+  .portfolio-section__photo {
+    width: 100%;
+    min-height: 324px;
+  }
 }
 /*---------- portfolio section end ----------*/
 
