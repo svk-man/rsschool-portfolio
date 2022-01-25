@@ -25,9 +25,14 @@
   --font-family-title: "Merriweather";
 }
 
+html,
+body {
+  overflow-x: hidden;
+  position: relative;
+}
+
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 body {
@@ -165,7 +170,6 @@ body {
 
 @media (max-width: 768px) {
   .header__container {
-    position: relative;
     background-position: -5px -30px;
     background-size: auto 620px;
   }
@@ -233,11 +237,10 @@ body {
     width: 81%;
     height: 697px;
     background-color: var(--color-black);
-    transition: all .5s;
+    transition: .5s;
   }
 
   .nav.nav--show {
-    visibility: visible;
     right: 0;
   }
 }
