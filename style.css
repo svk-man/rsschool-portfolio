@@ -330,6 +330,10 @@ body {
   cursor: pointer;
 }
 
+.lang-switcher__btn--active {
+  color: var(--color-gold);
+}
+
 .header__hamburger {
   margin: 0 4px 0 20px;
 }
