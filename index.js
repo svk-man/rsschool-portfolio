@@ -1,6 +1,16 @@
 const hamburger = document.querySelector('.hamburger');
+const navigation = document.querySelector('.nav');
+
 hamburger.addEventListener('click', function() {
-  this.classList.toggle('hamburger--is-active');
+  this.classList.toggle('hamburger--active');
+  navigation.classList.toggle('nav--show');
+});
+
+navigation.addEventListener('click', function(event) {
+  if (event.target.classList.contains('nav__link')) {
+    hamburger.classList.remove('hamburger--active');
+    navigation.classList.remove('nav--show');
+  }
 });
 
 console.log('%cВёрстка валидная +10', 'color: green; font-size: 16px');
