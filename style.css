@@ -27,6 +27,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -160,7 +161,6 @@ body {
   background: url('./assets/img/header-bg.jpg');
   background-repeat: no-repeat;
   background-position: center 0;
-  overflow-x: hidden;
 }
 
 @media (max-width: 768px) {
@@ -226,7 +226,7 @@ body {
 
 @media (max-width: 768px) {
   .nav {
-    position: fixed;
+    position: absolute;
     top: 0;
     right: -81%;
     z-index: 1;
@@ -234,7 +234,6 @@ body {
     height: 697px;
     background-color: var(--color-black);
     transition: all .5s;
-    visibility: hidden;
   }
 
   .nav.nav--show {
