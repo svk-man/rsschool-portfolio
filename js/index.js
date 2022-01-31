@@ -1,3 +1,42 @@
+import i18nObj from "./translate.js";
+
+const langSwitcher = document.querySelector('.lang-switcher');
+langSwitcher.addEventListener('click', changeLang);
+
+function changeLang(event) {
+  const currentLangSwitcherBtn = event.target;
+  const isCurrentLangSwitcherBtn = currentLangSwitcherBtn.classList.contains('lang-switcher__btn');
+  if (isCurrentLangSwitcherBtn) {
+    const currentLang = currentLangSwitcherBtn.dataset.lang;
+    getTranslate(currentLang);
+
+    const langSwitcherBtns = langSwitcher.querySelectorAll('.lang-switcher__btn');
+    langSwitcherBtns.forEach(langSwitcherBtn => { langSwitcherBtn.classList.remove('lang-switcher__btn--active'); });
+
+    currentLangSwitcherBtn.classList.add('lang-switcher__btn--active');
+  }
+}
+
+function getTranslate(lang = 'ru') {
+  const i18nElements = document.querySelectorAll('[data-i18n]');
+  i18nElements.forEach(i18nElement => {
+    const i18nElementKey = i18nElement.dataset.i18n;
+    const i18nElementValue = i18nObj[lang][i18nElementKey];
+    const isI18nElementKeyExists = i18nElementValue !== undefined;
+    if (isI18nElementKeyExists) {
+      if (i18nElement.placeholder) {
+        i18nElement.placeholder = i18nElementValue;
+        i18nElement.textContent = '';
+      } else if (i18nElement.value) {
+        i18nElement.value = i18nElementValue;
+        i18nElement.textContent = '';
+      } else {
+        i18nElement.textContent = i18nElementValue;
+      }
+    }
+  });
+}
+
 const hamburger = document.querySelector('.hamburger');
 const navigation = document.querySelector('.nav');
 
