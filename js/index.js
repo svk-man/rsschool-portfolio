@@ -51,7 +51,7 @@ function changeTheme(event) {
   whiteThemeElements.forEach(whiteThemeElement => { whiteThemeElement.classList.toggle('white-theme'); });
 
   const logoImg = document.querySelector('.logo__img');
-  logoImg.src = `../assets/svg/logo${(!isWhiteTheme) ? '-white' : ''}.svg`;
+  logoImg.src = `./assets/svg/logo${(!isWhiteTheme) ? '-white' : ''}.svg`;
 
   const priceSectionItemBtns = document.querySelectorAll('.price-section__item-btn');
   priceSectionItemBtns.forEach(priceSectionItemBtn => {
