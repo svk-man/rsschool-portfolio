@@ -37,6 +37,35 @@ function getTranslate(lang = 'ru') {
   });
 }
 
+const themeChangeButton = document.querySelector('.theme-change');
+themeChangeButton.addEventListener('click', changeTheme);
+
+function changeTheme(event) {
+  const isWhiteTheme = event.target.classList.contains('white-theme');
+
+  const whiteThemeElementSelectors = ['body', '.hero-section', '.header__container', '.nav__link', '.lang-switcher',
+    '.lang-switcher__btn', '.btn', '.section-title', '.section-title__inner', '.skills-section__item',
+    '.price-section__item-price', '.contacts-section', '.contacts-section__field', '.footer__link', '.socials__link-icon',
+    '.theme-change', '.hamburger', '.nav'];
+  const whiteThemeElements = document.querySelectorAll(whiteThemeElementSelectors.join(', '));
+  whiteThemeElements.forEach(whiteThemeElement => { whiteThemeElement.classList.toggle('white-theme'); });
+
+  const logoImg = document.querySelector('.logo__img');
+  logoImg.src = `../assets/svg/logo${(!isWhiteTheme) ? '-white' : ''}.svg`;
+
+  const priceSectionItemBtns = document.querySelectorAll('.price-section__item-btn');
+  priceSectionItemBtns.forEach(priceSectionItemBtn => {
+    const isWhiteTheme = priceSectionItemBtn.classList.contains('white-theme');
+    if (isWhiteTheme) {
+      priceSectionItemBtn.classList.remove('btn--light');
+      priceSectionItemBtn.classList.add('btn--dark');
+    } else {
+      priceSectionItemBtn.classList.remove('btn--dark');
+      priceSectionItemBtn.classList.add('btn--light');
+    }
+  });
+}
+
 const hamburger = document.querySelector('.hamburger');
 const navigation = document.querySelector('.nav');
 
