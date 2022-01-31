@@ -13,6 +13,35 @@ navigation.addEventListener('click', function(event) {
   }
 });
 
+const portfolioButtonsParent = document.querySelector('.portfolio-section__buttons');
+const portfolioPhotos = document.querySelectorAll('.portfolio-section__photo');
+portfolioButtonsParent.addEventListener('click', changeImages);
+
+function changeImages(event) {
+  const portfolioButton = event.target;
+  const isPortfolioButton = event.target.classList.contains('portfolio-section__button');
+  if(isPortfolioButton) {
+    const season = portfolioButton.dataset.season;
+    portfolioPhotos.forEach((item, index) => { item.src = `./assets/img/photos/${season}/${index + 1}.jpg`} );
+
+    const portfolioButtons = Array.from(portfolioButtonsParent.children);
+    portfolioButtons.forEach(item => { item.classList.remove('portfolio-section__button--active'); });
+    portfolioButton.classList.add('portfolio-section__button--active');
+  }
+}
+
+const seasons = ['winter', 'spring', 'summer', 'autumn'];
+function preloadImages() {
+  seasons.forEach(item => {
+    for(let i = 1; i <= 6; i++) {
+      const img = new Image();
+      img.src = `./assets/img/photos/${item}/${i}.jpg`;
+    }
+  });
+}
+
+preloadImages();
+
 console.log('%cВёрстка соответствует макету. Ширина экрана 768px +48', 'color: green; font-size: 16px');
 console.log('блок <header> +6');
 console.log('секция hero +6');

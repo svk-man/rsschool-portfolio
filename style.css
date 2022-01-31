@@ -600,6 +600,20 @@ body {
   margin-bottom: 60px;
 }
 
+.portfolio-section__button {
+  color: var(--color-gold);
+}
+
+.portfolio-section__button:hover {
+  color: var(--color-white);
+  background-color: var(--color-black);
+}
+
+.portfolio-section__button--active {
+  color: var(--color-black);
+  background-color: var(--color-gold);
+}
+
 .portfolio-section__photos {
   display: flex;
   justify-content: space-around;
