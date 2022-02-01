@@ -122,6 +122,12 @@ function changeImages(event) {
     const season = portfolioButton.dataset.season;
     portfolioPhotos.forEach((item, index) => { item.src = `./assets/img/photos/${season}/${index + 1}.jpg`} );
 
+    snowfallSeason = season;
+    setSnowfall(false);
+    if (snowfallPlay) {
+      setSnowfall(true);
+    }
+
     const portfolioButtons = Array.from(portfolioButtonsParent.children);
     portfolioButtons.forEach(item => { item.classList.remove('portfolio-section__button--active'); });
     portfolioButton.classList.add('portfolio-section__button--active');
@@ -152,6 +158,42 @@ const animateButton = function(event) {
 
 const bubblyButtons = document.querySelectorAll('.btn--bubbly');
 bubblyButtons.forEach(bubblyButton => bubblyButton.addEventListener('click', animateButton));
+
+let snowfallPlay = false;
+let snowfallSeason = 'autumn';
+const snowfallChangeButton = document.querySelector('.snowfall-change');
+snowfallChangeButton.addEventListener('click', changeSnowfall);
+
+function changeSnowfall(event) {
+  snowfallPlay = !snowfallPlay;
+  setSnowfall(snowfallPlay);
+}
+
+function setSnowfall(play = true) {
+  const snowfallElement = document.querySelector('.snowfall');
+
+  if (play) {
+    const snowfallSize = 3;
+    const snowfallIcons = {
+      'autumn': ['🍂', '🍁', '🍄', '🦔', '🌧'],
+      'spring': ['🌼', '🌸', '🌳', '⛅️', '🐦'],
+      'summer': ['🐞', '🌞', '🍉', '🍓', '🐝'],
+      'winter': ['⛄️', '❄️', '🎅', '🎄', '🦌'],
+    };
+
+    let snowfallElementHtml = '';
+    for (let i = 0; i < snowfallSize; i++) {
+      snowfallIcons[snowfallSeason].forEach(snowfallIcon => {
+        snowfallElementHtml += `<snowflake><span>${snowfallIcon}</span>️️</snowflake>`;
+      });
+    }
+
+    snowfallElement.innerHTML = snowfallElementHtml;
+    document.body.append(snowfallElement);
+  } else {
+    snowfallElement.innerHTML = '';
+  }
+}
 
 console.log('%cВёрстка соответствует макету. Ширина экрана 768px +48', 'color: green; font-size: 16px');
 console.log('блок <header> +6');
