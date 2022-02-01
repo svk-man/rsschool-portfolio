@@ -11,6 +11,12 @@ function getLocalStorage() {
   if (localStorage.getItem('lang')) {
     lang = localStorage.getItem('lang');
     getTranslate(lang);
+
+    const currentLangSwitcherBtn = langSwitcher.querySelector(`[data-lang=${lang}]`);
+    const langSwitcherBtns = langSwitcher.querySelectorAll('.lang-switcher__btn');
+    langSwitcherBtns.forEach(langSwitcherBtn => { langSwitcherBtn.classList.remove('lang-switcher__btn--active'); });
+
+    currentLangSwitcherBtn.classList.add('lang-switcher__btn--active');
   }
 
   if (localStorage.getItem('theme')) {
