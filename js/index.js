@@ -140,6 +140,19 @@ function preloadImages() {
 
 preloadImages();
 
+const animateButton = function(event) {
+  event.preventDefault;
+
+  event.target.classList.remove('animate');
+  event.target.classList.add('animate');
+  setTimeout(function(){
+    event.target.classList.remove('animate');
+  },700);
+};
+
+const bubblyButtons = document.querySelectorAll('.btn--bubbly');
+bubblyButtons.forEach(bubblyButton => bubblyButton.addEventListener('click', animateButton));
+
 console.log('%cВёрстка соответствует макету. Ширина экрана 768px +48', 'color: green; font-size: 16px');
 console.log('блок <header> +6');
 console.log('секция hero +6');
