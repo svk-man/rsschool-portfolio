@@ -1,5 +1,27 @@
 import i18nObj from "./translate.js";
 
+let lang = 'en';
+let theme = 'black';
+function setLocalStorage() {
+  localStorage.setItem('lang', lang);
+  localStorage.setItem('theme', theme);
+}
+
+function getLocalStorage() {
+  if (localStorage.getItem('lang')) {
+    lang = localStorage.getItem('lang');
+    getTranslate(lang);
+  }
+
+  if (localStorage.getItem('theme')) {
+    theme = localStorage.getItem('theme');
+    getTheme(theme);
+  }
+}
+
+window.addEventListener('beforeunload', setLocalStorage);
+window.addEventListener('load', getLocalStorage);
+
 const langSwitcher = document.querySelector('.lang-switcher');
 langSwitcher.addEventListener('click', changeLang);
 
@@ -9,6 +31,7 @@ function changeLang(event) {
   if (isCurrentLangSwitcherBtn) {
     const currentLang = currentLangSwitcherBtn.dataset.lang;
     getTranslate(currentLang);
+    lang = currentLang;
 
     const langSwitcherBtns = langSwitcher.querySelectorAll('.lang-switcher__btn');
     langSwitcherBtns.forEach(langSwitcherBtn => { langSwitcherBtn.classList.remove('lang-switcher__btn--active'); });
@@ -42,21 +65,28 @@ themeChangeButton.addEventListener('click', changeTheme);
 
 function changeTheme(event) {
   const isWhiteTheme = event.target.classList.contains('white-theme');
+  theme = isWhiteTheme ? 'black' : 'white';
+  getTheme(theme);
+}
+
+function getTheme(theme = 'white') {
+  const isWhiteTheme = theme === 'white';
 
   const whiteThemeElementSelectors = ['body', '.hero-section', '.header__container', '.nav__link', '.lang-switcher',
-    '.lang-switcher__btn', '.btn', '.section-title', '.section-title__inner', '.skills-section__item',
-    '.price-section__item-price', '.contacts-section', '.contacts-section__field', '.footer__link', '.socials__link-icon',
-    '.theme-change', '.hamburger', '.nav'];
+  '.lang-switcher__btn', '.btn', '.section-title', '.section-title__inner', '.skills-section__item',
+  '.price-section__item-price', '.contacts-section', '.contacts-section__field', '.footer__link', '.socials__link-icon',
+  '.theme-change', '.hamburger', '.nav'];
   const whiteThemeElements = document.querySelectorAll(whiteThemeElementSelectors.join(', '));
-  whiteThemeElements.forEach(whiteThemeElement => { whiteThemeElement.classList.toggle('white-theme'); });
+  whiteThemeElements.forEach(whiteThemeElement => { 
+    isWhiteTheme ? whiteThemeElement.classList.add('white-theme') : whiteThemeElement.classList.remove('white-theme');
+  });
 
   const logoImg = document.querySelector('.logo__img');
-  logoImg.src = `./assets/svg/logo${(!isWhiteTheme) ? '-white' : ''}.svg`;
+  logoImg.src = `./assets/svg/logo${(isWhiteTheme) ? '-white' : ''}.svg`;
 
   const priceSectionItemBtns = document.querySelectorAll('.price-section__item-btn');
   priceSectionItemBtns.forEach(priceSectionItemBtn => {
-    const isWhiteTheme = priceSectionItemBtn.classList.contains('white-theme');
-    if (isWhiteTheme) {
+    if (!isWhiteTheme) {
       priceSectionItemBtn.classList.remove('btn--light');
       priceSectionItemBtn.classList.add('btn--dark');
     } else {
